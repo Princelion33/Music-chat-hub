@@ -1,0 +1,103 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Music Chat Hub by Princelion33#7607", HidePremium = false, SaveConfig = true, ConfigFolder = "Music chat hub by Princelion33#7607"})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+OrionLib:MakeNotification({
+	Name = "Discord",
+	Content = "Made by Princelion33#7607",
+	Image = "rbxassetid://4483345998",
+	Time = 30
+})
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Local Players"
+})
+Tab:AddSlider({
+	Name = "SpeedPower",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+Tab:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jump",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+local Section = Tab:AddSection({
+	Name = "Fun"
+})
+Tab:AddButton({
+	Name = "Chat spoofer",
+	Callback = function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/djBfk8Li'),true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Infinite yield plugins",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Infinite-Store/Infinite-Store/main/main.lua"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Music",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = true
+})
+local Section = Tab:AddSection({
+	Name = "English Music"
+})
+Tab:AddButton({
+	Name = "Thank you U.S.A",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Princelion33/Thank-you-U.S.A-Roblox-script/main/Script'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Gangsta's Paradise",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Princelion33/Gangsta-s-Paradise-Roblox-Script/main/Script'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Creeper, aw man",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Princelion33/creeper-aw-man/main/Script'))()
+  	end    
+})
+OrionLib:Init()
+Tab1:AddToggle({
+    Name = "Toggle",
+    Default = true,
+    Save = true,
+    Flag = "toggle"
+})
+
+print(OrionLib.Flags["toggle"].Value) -- prints the value of the toggle.
+OrionLib:Destroy()
